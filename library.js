@@ -57,12 +57,6 @@ function displayAllBooks() {
       myLibrary.splice(i, 1)
       displayAllBooks()
     })
-
-    const bookID = document.createElement('div')
-    bookID.classList.add('book-id')
-    bookID.setAttribute("hidden", true)
-    bookID.innerHTML = i
-    bookContainer.appendChild(bookID)
   }
 }
 
