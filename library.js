@@ -32,18 +32,23 @@ const pages = favDialog.querySelector('.pages');
 const outputBox = document.querySelector('output');
 const confirmBtn = favDialog.querySelector("#confirmBtn");
 const cancelBtn = favDialog.querySelector('#cancelBtn');
+const form = favDialog.querySelector('form');
 add_book.addEventListener('click', ()=> {
   favDialog.showModal();
 });
 
+//modal confirm button
 confirmBtn.addEventListener("click", (e) => {
   e.preventDefault();
-  let newBook = new Book(title.value, author.value, pages.value);
-  addBookToLibrary(newBook);
+  if (form.reportValidity()) {
+    let newBook = new Book(title.value, author.value, pages.value);
+    addBookToLibrary(newBook);
+    favDialog.close();
+  }
   displayAllBooks();
-  //console.log(newBook.info())
 })
 
+//modal cancel button
 cancelBtn.addEventListener("click", (e)=> {
   favDialog.close();
 })

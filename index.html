@@ -21,16 +21,16 @@
     <dialog id="favDialog">
       <form>
         <p>
-          <label>Title:</label>
-          <input type="text" class="title" required>
-          <label>Author:</label>
+          <label for="title">Title:</label>
+          <input type="text" name="title" class="title" required>
+          <label for="author">Author:</label>
           <input type="text" class="author" required>
-          <label>Pages:</label>
+          <label for="pages">Pages:</label>
           <input type="number" class="pages" required>
         </p>
         <div>
-          <button id="confirmBtn" value="default">Confirm</button>
-          <button id="cancelBtn" value="cancel" formmethod="dialog">Cancel</button>
+          <button type="submit" id="confirmBtn">Confirm</button>
+          <button type="button" id="cancelBtn" formmethod="dialog">Cancel</button>
         </div>
       </form>
     </dialog>
