@@ -31,17 +31,23 @@ const author = favDialog.querySelector('.author');
 const pages = favDialog.querySelector('.pages');
 const outputBox = document.querySelector('output');
 const confirmBtn = favDialog.querySelector("#confirmBtn");
+const cancelBtn = favDialog.querySelector('#cancelBtn');
 add_book.addEventListener('click', ()=> {
   favDialog.showModal();
 });
 
 confirmBtn.addEventListener("click", (e) => {
   e.preventDefault();
-  let newBook = new Book(title.value, author.value, pages.value)
-  addBookToLibrary(newBook)
-  displayAllBooks()
+  let newBook = new Book(title.value, author.value, pages.value);
+  addBookToLibrary(newBook);
+  displayAllBooks();
   //console.log(newBook.info())
 })
+
+cancelBtn.addEventListener("click", (e)=> {
+  favDialog.close();
+})
+
 function bookModal() {
   console.log("Hello! I am an alert box!!")
 }

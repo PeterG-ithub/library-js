@@ -7,6 +7,11 @@
 body {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1.5rem;
+  min-height: 100%;
+}
+
+html {
+  height: 100%;
 }
 .nav {
   background-color: #FFF3E2;
@@ -24,3 +29,42 @@ body {
   display: flex;
 }
 
+.modal > dialog {
+  top: 50%;
+  left: 50%;
+  border-radius: 0.6rem;
+  padding: 1rem;
+  -webkit-transform: translate(-50%, -100%);
+  -moz-transform: translate(-50%, -100%);
+  -ms-transform: translate(-50%, -100%);
+  transform: translate(-50%, -100%);
+}
+
+.modal p {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 0.5fr 1fr;
+}
+
+.modal button {
+  border-radius: 0.7rem;
+  float: right;
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin: 1rem 0 0 0.5rem;
+  padding: 0.4rem;
+}
+
+.modal #confirmBtn {
+  background-color: rgb(0, 255, 0);
+}
+
+.modal #cancelBtn {
+  background-color: red;
+  color: white;
+}
+
+.modal input {
+  padding: 0.3rem;
+  border-radius: 0.4rem;
+}
