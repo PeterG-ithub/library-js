@@ -29,6 +29,14 @@ body {
   word-wrap: break-word
 }
 
+.book-read {
+  background-color: green;
+}
+
+.book-unread {
+  background-color: red;
+}
+
 html {
   height: 100%;
 }

@@ -46,8 +46,18 @@ function displayAllBooks() {
     
     const bookReadBtn = document.createElement('button')
     bookReadBtn.classList.add('book-read-btn')
+    bookReadBtn.classList.add('book-unread')
     bookReadBtn.innerHTML = 'Read'
     bookContainer.appendChild(bookReadBtn)
+    bookReadBtn.onclick = function () {
+      if (bookReadBtn.classList.contains('book-unread')) {
+        bookReadBtn.classList.remove('book-unread')
+        bookReadBtn.classList.add('book-read')
+      } else {
+        bookReadBtn.classList.remove('book-read')
+        bookReadBtn.classList.add('book-unread')
+      }
+    }
 
     const bookDeleteBtn = document.createElement('button')
     bookDeleteBtn.classList.add('book-delete-btn')
