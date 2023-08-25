@@ -21,9 +21,29 @@ const bookDisplay = document.querySelector('.book-display');
 function displayAllBooks() {
   bookDisplay.innerHTML = '';
   for (let i = 0; i < myLibrary.length; i++) {
-    console.log(myLibrary[i].info())
-    const book = document.createTextNode(myLibrary[i].info())
-    bookDisplay.appendChild(book)
+    //create div.book-container
+    const bookContainer = document.createElement('div');
+    bookContainer.classList.add('book-container')
+    bookDisplay.appendChild(bookContainer)
+
+    //put book inside book container
+    const book = myLibrary[i]
+
+    const bookTitle = document.createElement('div')
+    bookTitle.classList.add('book-title')
+    bookTitle.innerHTML = book.title
+    bookContainer.appendChild(bookTitle)
+
+    const bookAuthor = document.createElement('div')
+    bookAuthor.classList.add('book-author')
+    bookAuthor.innerHTML = book.author
+    bookContainer.appendChild(bookAuthor)
+
+    const bookPages = document.createElement('div')
+    bookPages.classList.add('book-pages')
+    bookPages.innerHTML = book.pages
+    bookContainer.appendChild(bookPages)
+    
   }
 }
 

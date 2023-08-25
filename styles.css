@@ -10,6 +10,25 @@ body {
   min-height: 100%;
 }
 
+.book-display {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.book-container {
+  border: solid 1px;
+  border-radius: 1rem;
+  padding: 1rem;
+  text-align: center;
+  width: 20rem;
+}
+
+.book-container > * {
+  word-wrap: break-word
+}
+
 html {
   height: 100%;
 }
