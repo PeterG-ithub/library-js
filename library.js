@@ -44,8 +44,28 @@ function displayAllBooks() {
     bookPages.innerHTML = book.pages
     bookContainer.appendChild(bookPages)
     
+    const bookReadBtn = document.createElement('button')
+    bookReadBtn.classList.add('book-read-btn')
+    bookReadBtn.innerHTML = 'Read'
+    bookContainer.appendChild(bookReadBtn)
+
+    const bookDeleteBtn = document.createElement('button')
+    bookDeleteBtn.classList.add('book-delete-btn')
+    bookDeleteBtn.innerHTML = 'delete'
+    bookContainer.appendChild(bookDeleteBtn)
+    bookDeleteBtn.addEventListener("click", () => {
+      myLibrary.splice(i, 1)
+      displayAllBooks()
+    })
+
+    const bookID = document.createElement('div')
+    bookID.classList.add('book-id')
+    bookID.setAttribute("hidden", true)
+    bookID.innerHTML = i
+    bookContainer.appendChild(bookID)
   }
 }
+
 
 //modal for add book button 
 const favDialog = document.getElementById("favDialog");
@@ -77,10 +97,10 @@ cancelBtn.addEventListener("click", (e)=> {
   favDialog.close();
 })
 
-function bookModal() {
-  console.log("Hello! I am an alert box!!")
-}
 
+
+//initial book
 theHobbit = new Book('The Hobbit', 'J.R.R Tolkein', 295)
 addBookToLibrary(theHobbit)
 displayAllBooks()
+
