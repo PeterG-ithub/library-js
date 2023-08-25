@@ -17,9 +17,13 @@ function addBookToLibrary(book) {
 }
 
 //method to display books
+const bookDisplay = document.querySelector('.book-display');
 function displayAllBooks() {
+  bookDisplay.innerHTML = '';
   for (let i = 0; i < myLibrary.length; i++) {
     console.log(myLibrary[i].info())
+    const book = document.createTextNode(myLibrary[i].info())
+    bookDisplay.appendChild(book)
   }
 }
 
@@ -59,3 +63,4 @@ function bookModal() {
 
 theHobbit = new Book('The Hobbit', 'J.R.R Tolkein', 295)
 addBookToLibrary(theHobbit)
+displayAllBooks()
